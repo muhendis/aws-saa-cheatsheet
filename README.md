@@ -36,35 +36,35 @@ This cheat sheet is best used alongside hands-on practice in the AWS Management 
 
 The cheat sheet covers the following sections:
 
-1. **Intro**
-2. **Getting Started**
-3. **IAM (Identity and Access Management)**
-4. **EC2 Basics**
-5. **EC2 Associate**
-6. **EBS, Instance Storage, and EFS**
-7. **ELB and Auto Scaling Groups**
-8. **RDS, Aurora, and Cache**
-9. **Route 53**
-10. **Classic Architecture**
-11. **S3 Basics**
-12. **S3 Advanced**
-13. **S3 Security**
-14. **CloudFront and Global Accelerator**
-15. **Storage Extras**
-16. **SQS, SNS, Kinesis, and MQ**
-17. **ECS, Fargate, ECR, and EKS**
-18. **Serverless**
-19. **Serverless Architectures**
-20. **Databases**
-21. **Data Analytics**
-22. **Machine Learning**
-23. **CloudWatch, CloudTrail, and Config**
-24. **Advanced Identity Management**
-25. **KMS, SSM Parameter Store, Shield, and WAF**
-26. **VPC**
-27. **Disaster Recovery and Migrations**
-28. **Solution Architectures**
-29. **Other AWS Services**
+1. [Introduction](docs/01_intro.md)
+2. [Getting Started](docs/02_get_started.md)
+3. [IAM (Identity and Access Management)](docs/03_iam.md)
+4. [EC2 Basics](docs/04_ec2_basics.md)
+5. [EC2 Associate](docs/05_ec2_associate.md)
+6. [EBS, Instance Storage, and EFS](docs/06_ebs_inst_storage_efs.md)
+7. [ELB and Auto Scaling Groups](docs/07_elb_asg.md)
+8. [RDS, Aurora, and Caching](docs/08_rds_aurora_cache.md)
+9. [Route 53](docs/09_route_53.md)
+10. [Classic Architecture](docs/10_classic_architecture.md)
+11. [S3](docs/11_s3.md)
+12. [Advanced S3](docs/12_s3_advance.md)
+13. [S3 Security](docs/13_s3_security.md)
+14. [CloudFront and Global Accelerator](docs/14_cludfrnt_gbl_acelrator.md)
+15. [Storage Extras](docs/15_storage_extras.md)
+16. [SQS, SNS, Kinesis, and MQ](docs/16_sqs_sns_kinesis_mq.md)
+17. [ECS, Fargate, ECR, and EKS](docs/17_ecs_fargate_ecr_eks.md)
+18. [Serverless](docs/18_serverless.md)
+19. [Serverless Architecture](docs/19_serverless_arch.md)
+20. [Databases](docs/20_databases.md)
+21. [Data Analytics](docs/21_data_analytics.md)
+22. [Machine Learning](docs/22_machine_learning.md)
+23. [CloudWatch, CloudTrail, and Config](docs/23_cludwatch_cludtrail_config.md)
+24. [Advanced Identity](docs/24_advance_identity.md)
+25. [KMS, SSM Parameter Store, Shield, and WAF](docs/25_kms_ssm_sheild_waf.md)
+26. [VPC](docs/26_vpc.md)
+27. [Disaster Recovery and Migrations](docs/27_dis_recv_migrations.md)
+28. [Solution Architectures](docs/28_solution_archs.md)
+29. [Other Services](docs/29_other_services.md)
 
 ## Contributing
 
