@@ -1,8 +1,8 @@
-### **Elastic Load Balancer (ELB) and Auto Scaling Group (ASG) Cheat Sheet**
+# **Elastic Load Balancer (ELB) and Auto Scaling Group (ASG) Cheat Sheet**
 
 ---
 
-#### **Elastic Load Balancer (ELB)**
+## **Elastic Load Balancer (ELB)**
 
 | **Feature**                | **Details**                                                                                     |
 |----------------------------|-------------------------------------------------------------------------------------------------|
@@ -34,7 +34,24 @@
 
 ---
 
-#### **Auto Scaling Group (ASG)**
+#### **Routing Policies for Application Load Balancer (ALB)**
+
+| **Routing Policy**            | **Description**                                                                                  | **Example**                                      | **Use Cases**                                                                                 |
+|-------------------------------|--------------------------------------------------------------------------------------------------|------------------------------------------------|----------------------------------------------------------------------------------------------|
+| **Path-Based Routing**         | Routes traffic based on the URL path in the request.                                             | `/images` → Target Group A. <br> `/api` → Target Group B. | Microservices or web apps with separate services like images, APIs, or frontend.             |
+| **Host-Based Routing**         | Routes traffic based on the hostname in the request.                                             | `api.example.com` → Target Group A. <br> `www.example.com` → Target Group B. | Multi-tenant applications with separate domains or subdomains.                               |
+| **Query String Routing**       | Routes traffic based on query parameters in the request.                                         | `?user=premium` → Target Group A.              | Direct traffic to premium or standard services based on user attributes.                     |
+| **Header-Based Routing**       | Routes traffic based on HTTP headers in the request.                                             | Header `X-Region: US` → Target Group B.        | Region-specific routing or custom application logic based on headers.                        |
+| **Target Group-Based Routing** | Routes traffic to different types of targets: EC2, IPs, or Lambda.                              | EC2 instances → Target Group A.                | Deploy workloads on different compute resources based on traffic type.                       |
+| **HTTPS Redirects**            | Redirects HTTP traffic to HTTPS automatically.                                                  | `http://example.com` → `https://example.com`.   | Enforce secure connections for all web traffic.                                              |
+| **Fixed Responses**            | Returns a predefined HTTP response for specific requests.                                       | Path `/maintenance` → Return `503`.            | Show maintenance or custom error messages for specific endpoints.                            |
+| **Redirect Actions**           | Redirects users to another URL or endpoint.                                                     | `/old-path` → `/new-path`.                     | Handle URL structure changes or redirect deprecated endpoints.                               |
+| **Weighted Target Group Routing** | Splits traffic between multiple target groups based on assigned weights.                        | 70% → Target Group A, 30% → Target Group B.    | Gradual traffic migration, blue-green deployments, or A/B testing.                           |
+
+
+---
+
+## **Auto Scaling Group (ASG)**
 
 | **Feature**                  | **Details**                                                                                     |
 |------------------------------|-------------------------------------------------------------------------------------------------|

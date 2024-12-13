@@ -6,8 +6,17 @@
 | **Overview**                    | Highly available, scalable, managed DNS. Provides 100% SLA availability.                    |
 | **Purpose**                     | Maps domain names to resources (e.g., IPs, AWS resources). Functions as a domain registrar. |
 | **DNS Record Types**            | A, AAAA, CNAME, NS (must-know) + advanced types like CAA, TXT, SRV, etc.                    |
-| **Alias vs. CNAME**             | **Alias**: Maps root/non-root domains to AWS resources; free and supports health checks.    |
-|                                 | **CNAME**: Maps hostname to another hostname; works only on non-root domains.               |
+
+---
+
+### **DNS Record Types**
+
+| **DNS Record Type**             | **Details**                                                                                 |
+|---------------------------------|---------------------------------------------------------------------------------------------|
+| **Alias**                       | Maps your root domain (example.com) to AWS resources (ELB, CloudFront, or S3); free and supports health checks.    |
+| **CNAME**                       | Maps subdomain (e.g., www.example.com) to another domain (e.g., example.com).               |
+| **A Records**                   | Associate a domain with a specific IP address.                                              |
+
 
 ---
 
@@ -17,7 +26,7 @@
 |---------------------------------|---------------------------------------------------------------------------------------------|
 | **Public Hosted Zone**          | Routes traffic to resources accessible from the internet (e.g., websites).                  |
 | **Private Hosted Zone**         | Routes traffic within VPCs (e.g., internal APIs, DBs).                                      |
-| **Cost**                        | $0.50 per hosted zone/month.                                                               |
+| **Cost**                        | $0.50 per hosted zone/month.                                                                |
 
 ---
 
