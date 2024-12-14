@@ -18,9 +18,10 @@
 | **A Records**                   | Associate a domain with a specific IP address.                                              |
 
 TL;DR:
-Use Alias for AWS services (e.g., ELB, CloudFront).
-Use CNAME for mapping subdomains to other domains (e.g., www.example.com → example.com).
-Use A Record to map domains/subdomains to IPv4 addresses.
+
+- Use Alias for AWS services (e.g., ELB, CloudFront).
+- Use CNAME for mapping subdomains to other domains (e.g., www.example.com → example.com).
+- Use A Record to map domains/subdomains to IPv4 addresses.
 
 ---
 
