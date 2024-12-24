@@ -18,6 +18,12 @@ AWS databases are categorized by their functionality and core features:
 | **Search Databases**      | Full-text search and indexing for structured and unstructured data.              | Amazon OpenSearch.                   |
 | **Object Storage**        | Storing large objects and files with infinite scalability.                       | Amazon S3, Amazon Glacier.           |
 
+##### **Simplified View**
+- **DocumentDB:** Think **MongoDB compatibility** for structured, queryable JSON-like documents.  
+- **DynamoDB:** Think **simpler, fast key-value store** that supports JSON but with fewer complex query capabilities.
+- **Amazon QLDB** : Think  **immutable log keeping** -Amazon Quantum Ledger Database
+
+Both work with JSON, but **DocumentDB** is better for **query complexity**, while **DynamoDB** excels in **scalability and speed**.
 ---
 
 ### **2. Databases Summary: Key Features and Use Cases**
@@ -57,3 +63,11 @@ AWS databases are categorized by their functionality and core features:
 | **Search and indexing**            | Amazon OpenSearch.                          |
 | **Ad-hoc SQL analysis on S3 data** | Amazon Athena.                              |
 | **Big data processing**            | Amazon EMR.                                 |
+
+##### **Simplified View**
+- **DocumentDB:** Think **MongoDB compatibility** for structured, queryable JSON-like documents.  
+- **DynamoDB:** Think **simpler, fast key-value store** that supports JSON but with fewer complex query capabilities.
+- **Amazon QLDB** : Think  **immutable log keeping** -Amazon Quantum Ledger Database
+
+
+Both work with JSON, but **DocumentDB** is better for **query complexity**, while **DynamoDB** excels in **scalability and speed**.
