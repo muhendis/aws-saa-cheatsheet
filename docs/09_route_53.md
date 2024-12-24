@@ -7,6 +7,29 @@
 | **Purpose**                     | Maps domain names to resources (e.g., IPs, AWS resources). Functions as a domain registrar. |
 | **DNS Record Types**            | A, AAAA, CNAME, NS (must-know) + advanced types like CAA, TXT, SRV, etc.                    |
 
+
+### **DNS Record Types - AWS Exam Cheat Sheet**
+
+| **Record Type**       | **Purpose**                                                                 | **Example Use Case**                       | **Key Exam Tips**                                                                                     |
+|------------------------|-----------------------------------------------------------------------------|--------------------------------------------|-------------------------------------------------------------------------------------------------------|
+| **A (Address)**        | Maps a domain name to an IPv4 address.                                     | `www.example.com` → `192.0.2.1`           | Use for mapping to IPv4 addresses.                                                                   |
+| **AAAA**               | Maps a domain name to an IPv6 address.                                     | `www.example.com` → `2001:db8::1`         | Use for IPv6 setups.                                                                                 |
+| **CNAME**              | Maps a domain name to another domain name (alias).                        | `app.example.com` → `www.example.com`     | Cannot be used for root domains (use ALIAS instead in Route 53).                                     |
+| **MX (Mail Exchange)** | Specifies mail servers for a domain.                                       | Directs emails to `mail.example.com`.     | Essential for email services like SES.                                                              |
+| **NS (Name Server)**   | Delegates a domain to specific name servers.                               | Points `example.com` to Route 53 NS.      | Automatically set when creating a hosted zone in Route 53.                                           |
+| **PTR (Pointer)**      | Resolves an IP address to a domain name (reverse DNS lookup).              | `192.0.2.1` → `www.example.com`.          | Used for compliance or reverse DNS lookups, often in conjunction with email services.                |
+| **SOA (Start of Authority)** | Contains administrative details about the zone (e.g., TTL, refresh rate).        | DNS zone metadata.                        | Automatically included in Route 53 hosted zones.                                                    |
+| **TXT (Text)**         | Stores arbitrary text, often used for verification or policies (e.g., SPF, DKIM). | Domain verification for SES or ACM.       | Commonly used for domain ownership verification and email authentication (SPF, DKIM, DMARC).         |
+| **SRV (Service)**      | Specifies services and ports for a domain.                                | `sip.example.com` → `host:port`.          | Used for protocols like SIP or LDAP to define service locations.                                     |
+| **ALIAS** (AWS-specific) | Points a domain to an AWS resource (e.g., ELB, CloudFront) without additional charge. | `example.com` → `my-ELB.amazonaws.com`.   | Preferred over CNAME for root domains in Route 53. No additional DNS query costs for AWS resources. |
+
+---
+
+### **Quick Notes:**
+- **A vs. CNAME:** Use **A** for direct IP mapping, **CNAME** for aliases (but not root domains).  
+- **ALIAS vs. CNAME:** Use **ALIAS** for root domains and AWS resources (like ELB, CloudFront).  
+- **TXT Records:** Crucial for domain verification (e.g., SES, ACM).  
+- **SOA and NS Records:** Automatically handled by Route 53, but know their purpose for the exam.
 ---
 
 ### **DNS Record Types**
