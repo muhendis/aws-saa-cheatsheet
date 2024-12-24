@@ -51,6 +51,17 @@
 | **File System Type**        | POSIX-compliant; supports NFSv4.1.                                                              |
 | **Encryption**              | Supports encryption at rest using KMS.                                                         |
 
+##### **Which Throughput Mode to Choose?**
+
+- **Bursting:** For irregular workloads (Default mode).  
+- **Provisioned:** For predictable and consistent workloads.  
+- **Elastic:** For workloads with sudden and significant traffic spikes.  
+
+**Exam Tip:**  
+- Use **Bursting** for general-purpose workloads.  
+- Use **Provisioned** when you need guaranteed throughput.  
+- Use **Elastic** for highly variable and unpredictable workloads.
+- 
 ---
 
 #### **EBS vs EFS vs Instance Store**
