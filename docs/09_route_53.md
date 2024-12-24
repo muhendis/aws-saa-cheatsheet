@@ -71,6 +71,22 @@ TL;DR:
 | **Multi-Value**                 | Returns multiple healthy resources (up to 8). Not a substitute for load balancers.          |
 | **IP-based Routing**            | Routes based on user IP (uses CIDR blocks).                                                |
 
+
+##### **Key Differences for Decision**
+
+| **Feature**           | **Geolocation** (Simple and fixed location-based routing)                    | **Geoproximity** (Flexible and proximity-based routing)                     |
+|-----------------------|------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
+| **Routing Basis**     | Based on user’s geographic region (country, continent, or state).           | Based on proximity to resources with optional bias adjustments.            |
+| **Flexibility**       | Limited; strictly routes by geography.                                      | High; allows traffic overrides with bias adjustments.                      |
+| **Customization**     | No adjustments; fixed routing.                                              | Dynamic; expand or shrink resource coverage with bias.                     |
+| **Setup Complexity**  | Simple; no extra tools required.                                            | Advanced; requires Route 53 Traffic Flow setup.                            |
+| **Exam Use Case**     | Use for compliance (e.g., GDPR) or regional content delivery.               | Use to balance load, test regions, or shift traffic dynamically.           |
+
+---
+
+##### **Key Exam Tip (Short Version):**
+- Choose **Geolocation** for compliance or simple regional delivery.  
+- Choose **Geoproximity** for flexible traffic management, load balancing, and advanced setups.
 ---
 
 ### **Health Checks**
