@@ -23,7 +23,8 @@ AWS databases are categorized by their functionality and core features:
 - **DynamoDB:** Think **simpler, fast key-value store** that supports JSON but with fewer complex query capabilities.
 - **Amazon QLDB** : Think  **immutable log keeping** -Amazon Quantum Ledger Database
 
-Both work with JSON, but **DocumentDB** is better for **query complexity**, while **DynamoDB** excels in **scalability and speed**.
+Both work with JSON, but **DocumentDB** is better for **query complexity**, while **DynamoDB (real-time)** excels in **scalability and speed**.
+
 ---
 
 ### **2. Databases Summary: Key Features and Use Cases**
@@ -70,4 +71,4 @@ Both work with JSON, but **DocumentDB** is better for **query complexity**, whil
 - **Amazon QLDB** : Think  **immutable log keeping** -Amazon Quantum Ledger Database
 
 
-Both work with JSON, but **DocumentDB** is better for **query complexity**, while **DynamoDB** excels in **scalability and speed**.
+Both work with JSON, but **DocumentDB** is better for **query complexity**, while **DynamoDB (real-time)** excels in **scalability and speed**.
