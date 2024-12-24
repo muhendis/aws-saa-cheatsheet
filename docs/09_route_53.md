@@ -87,6 +87,45 @@ TL;DR:
 ##### **Key Exam Tip (Short Version):**
 - Choose **Geolocation** for compliance or simple regional delivery.  
 - Choose **Geoproximity** for flexible traffic management, load balancing, and advanced setups.
+
+
+
+##### **How Geoproximity Routing Works**
+
+Geoproximity routing in AWS Route 53 routes traffic based on the **physical distance** between users and resources, with the option to adjust the default behavior using **bias adjustments**. Here’s how it works step by step:
+
+##### **Example Scenario:**
+
+###### Scenario:
+You have two servers:
+1. **Server A** in the US.
+2. **Server B** in Europe.
+
+**Default Behavior:**
+- Users in the US are routed to Server A.
+- Users in Europe are routed to Server B.
+
+**With Bias Adjustments:**
+- Apply a **+20% bias** to Server B:
+  - Some US users will now be routed to Server B, even though Server A is closer.
+- Apply a **-10% bias** to Server A:
+  - Fewer users in the US will be routed to Server A, preferring Server B instead.
+
+---
+
+###### **Use Case Summary:**
+- Geoproximity is ideal for:
+  - **Load balancing across regions**: Shift traffic between regions based on capacity.
+  - **Cost optimization**: Direct traffic to lower-cost regions.
+  - **Testing new resources**: Gradually shift traffic for safe testing.
+  - **Disaster recovery**: Adjust traffic flow in case of regional outages.  
+
+---
+
+###### **Key Exam Tip:**
+Geoproximity routing dynamically adjusts based on proximity **and bias settings**, making it more flexible than Geolocation but requiring Traffic Flow for setup. Use it when you need advanced traffic control or load balancing across global resources.
+
+
 ---
 
 ### **Health Checks**
