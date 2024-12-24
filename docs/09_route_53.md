@@ -82,7 +82,6 @@ TL;DR:
 | **Setup Complexity**  | Simple; no extra tools required.                                            | Advanced; requires Route 53 Traffic Flow setup.                            |
 | **Exam Use Case**     | Use for compliance (e.g., GDPR) or regional content delivery.               | Use to balance load, test regions, or shift traffic dynamically.           |
 
----
 
 ##### **Key Exam Tip (Short Version):**
 - Choose **Geolocation** for compliance or simple regional delivery.  
@@ -111,7 +110,7 @@ You have two servers:
 - Apply a **-10% bias** to Server A:
   - Fewer users in the US will be routed to Server A, preferring Server B instead.
 
----
+
 
 ###### **Use Case Summary:**
 - Geoproximity is ideal for:
@@ -120,7 +119,6 @@ You have two servers:
   - **Testing new resources**: Gradually shift traffic for safe testing.
   - **Disaster recovery**: Adjust traffic flow in case of regional outages.  
 
----
 
 ###### **Key Exam Tip:**
 Geoproximity routing dynamically adjusts based on proximity **and bias settings**, making it more flexible than Geolocation but requiring Traffic Flow for setup. Use it when you need advanced traffic control or load balancing across global resources.
