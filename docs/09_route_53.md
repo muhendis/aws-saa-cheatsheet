@@ -72,6 +72,33 @@ TL;DR:
 | **IP-based Routing**            | Routes based on user IP (uses CIDR blocks).                                                |
 
 
+###### **Route 53 Active-Active ve Active-Passive Configuration - 3 Kolonlu Tablo (Key Points Dahil)**
+
+| **Konu**                        | **Active-Active Configuration**                                                                                                                                                     | **Active-Passive Configuration**                                                                                                                                             |
+|---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Tanım**                       | Tüm endpoint’ler aynı anda aktiftir ve trafik tüm endpoint’ler arasında paylaştırılır.                                                                                             | Bir endpoint aktiftir, diğerleri yedek (pasif) modda bekler.                                                                                                                 |
+| **Routing Policy**              | Weighted, Latency-based, Geolocation-based kullanılabilir.                                                                                                                         | Failover Routing Policy kullanılır.                                                                                                                                          |
+| **Health Check**                | Endpoint’lerin sağlığı sürekli kontrol edilir. Başarısız endpoint’ler otomatik olarak devre dışı bırakılır.                                                                         | Sağlık kontrolüyle aktif endpoint başarısız olursa, trafik yedek endpoint’e yönlendirilir.                                                                                   |
+| **Kullanım Amacı**              | Yüksek erişilebilirlik ve ölçeklenebilirlik gerektiren uygulamalar (ör. e-ticaret, global trafik dağıtımı).                                                                          | Felaket kurtarma senaryoları, kritik sistemlerin yedeklenmesi.                                                                                                               |
+| **Failover Mekanizması**        | Sağlıklı endpoint’ler arasında trafik otomatik olarak yönlendirilir.                                                                                                                | Aktif endpoint başarısız olursa, yedek endpoint devreye girer.                                                                                                               |
+| **Maliyet**                     | Daha yüksek maliyetlidir (tüm endpoint’ler sürekli çalışır).                                                                                                                        | Daha düşük maliyetlidir (yedek endpoint yalnızca gerektiğinde çalışır).                                                                                                       |
+| **Örnek Senaryo**               | Farklı bölgelerde (Region A ve Region B) çalışan iki veri merkezi aynı anda müşterilere hizmet verir.                                                                               | Bir veri merkezi (Region A) çalışırken, yedek veri merkezi (Region B) pasif bekler. Aktif veri merkezi çöktüğünde yedek devreye girer.                                       |
+| **Routing Policy’nin Rolü**     | Kullanıcıyı en uygun endpoint’e (ör. en düşük gecikmeli) yönlendirme sağlar.                                                                                                        | Sağlık kontrolüne bağlı olarak trafiği aktif ve pasif endpoint arasında yönlendirir.                                                                                         |
+| **Avantajları**                 | Yüksek erişilebilirlik ve kesintisiz hizmet sağlar.                                                                                                                                | Maliyet avantajı sunar ve kritik sistemlerin yedeklenmesini garanti eder.                                                                                                    |
+| **Key Points**                  | - **Routing Policies:** Weighted, Latency, Geolocation routing stratejilerini bilmek önemli.<br>- **Health Checks:** Endpoint çöktüğünde otomatik devre dışı bırakma mekanizması.    | - **Failover Routing Policy:** Trafiği otomatik olarak yedek endpoint’e yönlendirir.<br>- **Health Checks:** Sağlık kontrolü yedek endpoint’in devreye girmesini sağlar.       |
+
+---
+
+###### **Ek Notlar**
+- **Routing Policies ve Health Checks:** Sağlık kontrolleri ve uygun routing policy’ler, sınavda genellikle senaryoya uygun çözümü seçmek için test edilir.  
+- **Örnek Kullanım Senaryoları:**
+  - **Active-Active:** Global e-ticaret siteleri, müşterileri en yakın veri merkezine yönlendirmek için Latency-based routing kullanır.
+  - **Active-Passive:** Kritik öneme sahip finansal uygulamalar, aktif bir veri merkeziyle çalışırken yedek bir veri merkezi bekler.
+
+Bu tablo, sınavda çıkan sorulara yönelik net ve özlü bir rehberdir. Daha fazla detay ya da uygulamalı örnekler için destek verebilirim! 😊
+###
+
+
 ##### **Key Differences for Decision**
 
 | **Feature**           | **Geolocation** (Simple and fixed location-based routing)                    | **Geoproximity** (Flexible and proximity-based routing)                     |
@@ -145,6 +172,12 @@ Geoproximity routing dynamically adjusts based on proximity **and bias settings*
 | **Limitations**                 | Cannot target EC2 DNS names.                                                               |
 
 ---
+
+
+
+
+
+
 
 ### **Route 53 Pricing**
 
