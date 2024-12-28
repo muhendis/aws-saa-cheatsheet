@@ -27,6 +27,14 @@
    - **SSE-C**: For customer-managed encryption keys.
    - **Client-Side Encryption**: For fully encrypted data before upload.
 
+###### **Kritik Farklar** (SSE-KMS vs SSE-C)
+- **SSE-KMS:** AWS anahtarları yönetir, CloudTrail ile loglanır. Denetim ve uyumluluk için ideal.  
+- **SSE-C:** Anahtarlar tamamen müşteri kontrolündedir. AWS sadece şifreleme/deşifreleme yapar.
+
+###### **Seçim Kılavuzu** (SSE-KMS vs SSE-C)
+- **SSE-KMS:** Daha fazla denetim ve uyumluluk istediğinizde.  
+- **SSE-C:** Anahtar yönetimini tamamen kontrol etmek istediğinizde.
+
 2. **Access Management**: 
    - Use **Bucket Policies** and **Access Points** to manage permissions at a large scale.
    - **MFA Delete** adds another layer of security for critical operations.
